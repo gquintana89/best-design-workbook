@@ -3,23 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Workbook — Propuestas que cierran</title>
+<title>Design Workbook — Propuestas que cierran | Gabriela Quintana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#12182B;
-    --ink-soft:#232B44;
-    --parchment:#F4EFE1;
-    --parchment-dim:#EAE3D0;
-    --stamp:#B23A2E;
-    --stamp-dark:#8C2C22;
-    --ledger:#3C5A78;
-    --gold:#C9A227;
-    --graphite:#5B584C;
-    --line: rgba(18,24,43,0.14);
-    --paper-line: rgba(244,239,225,0.16);
+    --page:#EAE3D3;
+    --card:#FBF9F2;
+    --card-hover:#F1EAD9;
+    --coffee:#3F1C12;
+    --coffee-soft:#4A2117;
+    --coffee-muted: rgba(234,227,211,0.72);
+    --rust:#A9623F;
+    --rust-dark:#8B4E32;
+    --terra:#C97B4A;
+    --ink:#211C16;
+    --muted:#6B6558;
+    --line: rgba(33,28,22,0.14);
+    --line-on-coffee: rgba(234,227,211,0.16);
+    --cream-text:#EDE6D6;
     --max: 1120px;
   }
 
@@ -27,8 +30,8 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--ink);
-    color:var(--parchment);
+    background:var(--page);
+    color:var(--ink);
     font-family:'Inter', sans-serif;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
@@ -58,9 +61,9 @@
     position:sticky;
     top:0;
     z-index:50;
-    background:rgba(18,24,43,0.92);
+    background:rgba(234,227,211,0.92);
     backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--paper-line);
+    border-bottom:1px solid var(--line);
   }
   .nav .wrap{
     display:flex;
@@ -74,21 +77,22 @@
     font-weight:600;
     font-size:1.15rem;
     letter-spacing:0.01em;
+    color:var(--ink);
   }
-  .brand span{ color:var(--stamp); }
+  .brand span{ color:var(--rust); }
   .nav-cta{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.8rem;
-    background:var(--stamp);
-    color:var(--parchment);
+    background:var(--rust);
+    color:var(--cream-text);
     padding:10px 18px;
     border-radius:2px;
     text-decoration:none;
-    border:1px solid var(--stamp-dark);
+    border:1px solid var(--rust-dark);
     transition:transform .15s ease, background .15s ease;
     white-space:nowrap;
   }
-  .nav-cta:hover{ background:var(--stamp-dark); transform:translateY(-1px); }
+  .nav-cta:hover{ background:var(--rust-dark); transform:translateY(-1px); }
 
   /* ---------- HERO ---------- */
   .hero{
@@ -109,32 +113,32 @@
     font-size:0.72rem;
     letter-spacing:0.12em;
     text-transform:uppercase;
-    color:var(--gold);
+    color:var(--rust-dark);
     margin-bottom:22px;
   }
   .eyebrow::before{
     content:"";
     width:26px;
     height:1px;
-    background:var(--gold);
+    background:var(--rust-dark);
     display:inline-block;
   }
   .hero h1{
     font-size:clamp(2.3rem, 4vw, 3.4rem);
     line-height:1.08;
     font-weight:600;
-    color:var(--parchment);
+    color:var(--ink);
   }
   .hero h1 em{
     font-style:italic;
-    color:var(--stamp);
+    color:var(--rust);
     font-weight:500;
   }
   .hero p.lead{
     margin-top:24px;
     font-size:1.08rem;
     line-height:1.65;
-    color:#C9C4B2;
+    color:var(--muted);
     max-width:46ch;
   }
   .hero-actions{
@@ -147,38 +151,38 @@
   .btn-primary{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.88rem;
-    background:var(--stamp);
-    color:var(--parchment);
+    background:var(--rust);
+    color:var(--cream-text);
     padding:16px 26px;
     border-radius:2px;
     text-decoration:none;
     display:inline-flex;
     align-items:center;
     gap:10px;
-    border:1px solid var(--stamp-dark);
+    border:1px solid var(--rust-dark);
     transition:transform .15s ease, box-shadow .15s ease;
-    box-shadow:0 8px 20px -8px rgba(178,58,46,0.55);
+    box-shadow:0 8px 20px -8px rgba(169,98,63,0.45);
   }
-  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(178,58,46,0.7); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 26px -8px rgba(169,98,63,0.6); }
   .btn-primary:active{ transform:translateY(1px) scale(0.98); }
   .price-tag{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.85rem;
-    color:#C9C4B2;
+    color:var(--muted);
   }
   .price-tag b{
-    color:var(--gold);
+    color:var(--rust-dark);
     font-size:1.1rem;
   }
 
   /* redline document mock */
   .doc-card{
-    background:var(--parchment);
+    background:var(--card);
     color:var(--ink);
     border-radius:3px;
     padding:34px 30px;
     position:relative;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+    box-shadow:0 30px 60px -20px rgba(33,28,22,0.35);
     transform:rotate(1.2deg);
   }
   .doc-card::before{
@@ -197,22 +201,22 @@
     padding-bottom:12px;
     margin-bottom:18px;
   }
-  .doc-head .mono{ font-size:0.7rem; color:var(--graphite); text-transform:uppercase; letter-spacing:0.08em;}
+  .doc-head .mono{ font-size:0.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em;}
   .doc-line{ margin-bottom:16px; }
   .doc-line .label{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.66rem;
     text-transform:uppercase;
     letter-spacing:0.1em;
-    color:var(--graphite);
+    color:var(--muted);
     display:block;
     margin-bottom:6px;
   }
   .doc-old{
     text-decoration:line-through;
-    text-decoration-color:var(--stamp);
+    text-decoration-color:var(--rust);
     text-decoration-thickness:1.5px;
-    color:#8a8776;
+    color:#9a917f;
     font-size:0.98rem;
     font-family:'Fraunces', serif;
     font-style:italic;
@@ -222,7 +226,7 @@
     font-size:0.98rem;
     font-weight:500;
     font-family:'IBM Plex Mono', monospace;
-    background:linear-gradient(transparent 60%, rgba(201,162,39,0.28) 60%);
+    background:linear-gradient(transparent 60%, rgba(169,98,63,0.22) 60%);
     display:inline;
   }
   .doc-stamp{
@@ -231,17 +235,17 @@
     bottom:-22px;
     width:118px;
     height:118px;
-    border:3px double var(--stamp);
+    border:3px double var(--rust);
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     transform:rotate(-11deg);
-    background:rgba(178,58,46,0.06);
+    background:rgba(169,98,63,0.07);
   }
   .doc-stamp span{
     font-family:'IBM Plex Mono', monospace;
-    color:var(--stamp);
+    color:var(--rust-dark);
     text-align:center;
     font-size:0.62rem;
     line-height:1.5;
@@ -251,7 +255,7 @@
   }
 
   /* ---------- SECTION HEADERS ---------- */
-  .section{ padding:88px 0; border-top:1px solid var(--paper-line); }
+  .section{ padding:88px 0; border-top:1px solid var(--line); }
   .section-head{
     max-width:640px;
     margin-bottom:52px;
@@ -259,13 +263,13 @@
   .section-head .eyebrow{ margin-bottom:16px; }
   .section-head h2{
     font-size:clamp(1.7rem, 3vw, 2.3rem);
-    color:var(--parchment);
+    color:var(--ink);
     font-weight:600;
     line-height:1.2;
   }
   .section-head p{
     margin-top:16px;
-    color:#C9C4B2;
+    color:var(--muted);
     font-size:1.02rem;
     line-height:1.6;
   }
@@ -275,39 +279,39 @@
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:1px;
-    background:var(--paper-line);
-    border:1px solid var(--paper-line);
+    background:var(--line);
+    border:1px solid var(--line);
   }
   .benefit{
-    background:var(--ink);
+    background:var(--card);
     padding:34px 26px;
     transition:background .2s ease;
   }
-  .benefit:hover{ background:var(--ink-soft); }
+  .benefit:hover{ background:var(--card-hover); }
   .benefit .num{
     font-family:'IBM Plex Mono', monospace;
-    color:var(--stamp);
+    color:var(--rust-dark);
     font-size:0.78rem;
     display:block;
     margin-bottom:18px;
   }
   .benefit h3{
     font-size:1.08rem;
-    color:var(--parchment);
+    color:var(--ink);
     font-weight:600;
     margin-bottom:10px;
     line-height:1.3;
   }
   .benefit p{
     font-size:0.92rem;
-    color:#B9B49E;
+    color:var(--muted);
     line-height:1.55;
     margin:0;
   }
 
   /* ---------- CONTENTS / CLAUSES ---------- */
   .clauses{
-    background:var(--parchment);
+    background:var(--card);
     color:var(--ink);
     border-radius:4px;
     overflow:hidden;
@@ -323,7 +327,7 @@
   .clause:last-child{ border-bottom:none; }
   .clause .sec{
     font-family:'IBM Plex Mono', monospace;
-    color:var(--stamp);
+    color:var(--rust-dark);
     font-weight:600;
     font-size:0.95rem;
   }
@@ -335,7 +339,7 @@
   .clause .tag{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
-    color:var(--graphite);
+    color:var(--muted);
     text-transform:uppercase;
     letter-spacing:0.06em;
     white-space:nowrap;
@@ -347,9 +351,9 @@
     flex-wrap:wrap;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.8rem;
-    color:#B9B49E;
+    color:var(--muted);
   }
-  .format-note b{ color:var(--gold); }
+  .format-note b{ color:var(--rust-dark); }
 
   /* ---------- ABOUT ---------- */
   .about{
@@ -362,26 +366,26 @@
     width:200px;
     height:200px;
     border-radius:50%;
-    background:linear-gradient(160deg, var(--ledger), var(--ink-soft));
+    background:linear-gradient(160deg, var(--coffee-soft), var(--rust));
     display:flex;
     align-items:center;
     justify-content:center;
     font-family:'Fraunces', serif;
     font-size:3rem;
-    color:var(--parchment);
-    border:1px solid var(--paper-line);
+    color:var(--cream-text);
+    border:1px solid var(--line);
     /* Reemplaza este bloque por: background:url('tu-foto.jpg') center/cover; */
   }
   .about-text p{
     font-size:1.02rem;
     line-height:1.7;
-    color:#C9C4B2;
+    color:var(--muted);
     margin-bottom:16px;
   }
   .about-text p:first-child{
     font-family:'Fraunces', serif;
     font-size:1.3rem;
-    color:var(--parchment);
+    color:var(--ink);
     font-style:italic;
   }
   .signature{
@@ -389,13 +393,13 @@
     font-family:'Fraunces', serif;
     font-style:italic;
     font-size:1.15rem;
-    color:var(--gold);
+    color:var(--rust-dark);
   }
 
   /* ---------- FINAL CTA ---------- */
   .final-cta{
-    background:var(--parchment);
-    color:var(--ink);
+    background:var(--coffee);
+    color:var(--cream-text);
     border-radius:4px;
     padding:56px 48px;
     position:relative;
@@ -410,8 +414,8 @@
     position:absolute;
     inset:0;
     background:
-      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 28px);
-    opacity:0.5;
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line-on-coffee) 28px);
+    opacity:0.6;
     pointer-events:none;
   }
   .final-cta h2{
@@ -419,10 +423,11 @@
     font-weight:600;
     max-width:20ch;
     position:relative;
+    color:var(--cream-text);
   }
   .final-cta .sub{
     margin-top:14px;
-    color:var(--graphite);
+    color:var(--coffee-muted);
     font-size:0.98rem;
     max-width:42ch;
     position:relative;
@@ -435,14 +440,14 @@
     font-family:'IBM Plex Mono', monospace;
     font-size:2.6rem;
     font-weight:600;
-    color:var(--stamp);
+    color:var(--terra);
     display:block;
     line-height:1;
   }
   .cta-buy .price-sub{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.7rem;
-    color:var(--graphite);
+    color:var(--coffee-muted);
     text-transform:uppercase;
     letter-spacing:0.08em;
     display:block;
@@ -451,21 +456,21 @@
   .btn-final{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.9rem;
-    background:var(--stamp);
-    color:var(--parchment);
+    background:var(--rust);
+    color:var(--cream-text);
     padding:16px 30px;
     border-radius:2px;
     text-decoration:none;
     display:inline-block;
-    border:1px solid var(--stamp-dark);
-    transition:transform .15s ease;
+    border:1px solid var(--rust-dark);
+    transition:transform .15s ease, background .15s ease;
   }
-  .btn-final:hover{ transform:translateY(-2px); }
+  .btn-final:hover{ transform:translateY(-2px); background:var(--rust-dark); }
   .trust{
     margin-top:16px;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
-    color:var(--graphite);
+    color:var(--coffee-muted);
     letter-spacing:0.03em;
   }
 
@@ -473,10 +478,10 @@
   footer{
     padding:40px 0 60px;
     text-align:center;
-    color:#7A7768;
+    color:var(--muted);
     font-family:'IBM Plex Mono', monospace;
     font-size:0.75rem;
-    border-top:1px solid var(--paper-line);
+    border-top:1px solid var(--line);
   }
 
   /* ---------- RESPONSIVE ---------- */
@@ -646,12 +651,12 @@
 
       <div class="about">
         <!-- Reemplaza el div .avatar por una <img> con tu foto real -->
-        <div class="avatar">TU</div>
+        <div class="avatar">GQ</div>
         <div class="about-text">
           <p>"Esta propuesta no es un formulario. Es lo que hace que un cliente confíe en ti antes de ver una sola pieza de diseño."</p>
-          <p>Soy [Tu Nombre], diseñadora especializada en marcas y experiencias digitales. Después de años armando propuestas improvisadas, contratos genéricos bajados de internet y proyectos que se salían de control, construí el sistema que hoy uso en cada cliente nuevo — y que ahora convertí en este workbook.</p>
+          <p>Soy Gabriela Quintana, diseñadora especializada en marcas y experiencias digitales. Después de años armando propuestas improvisadas, contratos genéricos bajados de internet y proyectos que se salían de control, construí el sistema que hoy uso en cada cliente nuevo — y que ahora convertí en este workbook.</p>
           <p>No es teoría. Son las mismas plantillas y frameworks que uso para cerrar proyectos de diseño reales, adaptados para que cualquier diseñador freelance los pueda aplicar desde hoy.</p>
-          <div class="signature">— [Tu Nombre]</div>
+          <div class="signature">— Gabriela Quintana</div>
         </div>
       </div>
     </div>
@@ -678,7 +683,7 @@
 
   <footer>
     <div class="wrap">
-      DESIGN · WORKBOOK — © 2026. Producto digital de uso individual, no transferible ni redistribuible.
+      DESIGN · WORKBOOK — © 2026 Gabriela Quintana. Producto digital de uso individual, no transferible ni redistribuible.
     </div>
   </footer>
 
